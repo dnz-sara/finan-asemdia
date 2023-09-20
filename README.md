@@ -1,6 +1,6 @@
 # Finanças em dia
 
-Esta aplicação tem por finalidade auxiliar no controle financeiro mensal apresentando ao usuário um resumo relativo a receitas, despesas e rendimentos.
+Esta aplicação tem por finalidade auxiliar na organização e controle das finanças pessoais. São apresentados inicialmente, de forma resumida, os dados consolidados de receitas, despesas e rendimentos, referentes a cada mês, calculados a partir dos lançamentos individuais realizados pelo usuário.
 
 ---
 ## Como executar o projeto
