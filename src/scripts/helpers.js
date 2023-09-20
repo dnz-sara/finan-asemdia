@@ -4,4 +4,3 @@ const formatarValorMoeda = (valor) => {
         currency: 'BRL'
     });
 }
-

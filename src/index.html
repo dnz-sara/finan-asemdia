@@ -11,36 +11,41 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="styles.css">
 
-    <script src="api.js"></script>
-    <script src="helpers.js"></script>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/helpers.js"></script>
 
     <title>Finanças em Dia</title>
 </head>
 
 <body>
 
-    <header>
-        <h2>Finanças em Dia</h2>
-        <!-- <div class="banner">
-            <img src="https://images.contentstack.io/v3/assets/blt45c082eaf9747747/bltbcca43584b660977/5de0b6aa703bd50385f981ad/Header-5.jpg?width=1200&height=630&fit=crop"
-                alt="y">
-        </div> -->
+    <header class="main-header">
+        <h1>FINANÇAS EM DIA</h1>
     </header>
     <section class="relatorio-btn-bar-options">
         <div class="options-bar">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <select id="selectMesAnoReferencia" onchange="carregarListagemDeLancamentos()"
                         class="form-select form-select-lg" aria-label="Large select example">
                         <option value="01-2023">Janeiro - 2023</option>
                         <option value="02-2023">Fevereiro - 2023</option>
                         <option value="03-2023">Março - 2023</option>
+                        <option value="04-2023">Abril - 2023</option>
+                        <option value="05-2023">Maio - 2023</option>
+                        <option value="06-2023">Junho - 2023</option>
+                        <option value="07-2023">Julho - 2023</option>
+                        <option value="08-2023">Agosto - 2023</option>
+                        <option value="09-2023">Setembro - 2023</option>
+                        <option value="10-2023">Outubro - 2023</option>
+                        <option value="11-2023">Novembro - 2023</option>
+                        <option value="12-2023">Dezembro - 2023</option>
                     </select>
                 </div>
                 <div class="col-md-6">
                     <a href="#sessao-lancamentos" class="btn btn-primary  right-button">Lançamentos</a>
                     <button type="button" class="btn btn-primary  right-button" data-bs-toggle="modal"
-                        data-bs-target="#modalLancamentos">Novo Lançamento</button>
+                        data-bs-target="#modalLancamentos" onclick="iniciaModal()">Novo Lançamento</button>
                 </div>
             </div>
         </div>
@@ -51,19 +56,19 @@
             <tbody>
                 <tr>
                     <th scope="row">Receita</th>
-                    <td>R$2000,00</td>
+                    <td><span id="spanReceita"></span></td>
                 </tr>
                 <tr>
                     <th scope="row">Despesas</th>
-                    <td>R$2000,00</td>
+                    <td><span id="spanDespesas"></td>
                 </tr>
                 <tr>
                     <th scope="row">Rendimentos</th>
-                    <td>R$2000,00</td>
+                    <td><span id="spanRendimentos"></td>
                 </tr>
                 <tr>
                     <th scope="row">Saldo</th>
-                    <td>R$2000,00</td>
+                    <td><span id="spanSaldo"></td>
                 </tr>
             </tbody>
         </table>
@@ -72,14 +77,14 @@
 
     <section class="lancamentos" id="sessao-lancamentos">
 
-        <h3>Lancamentos</h3>
+        <h3>Lançamentos</h3>
         <table id="table-lancamentos" class="table">
             <thead>
                 <tr>
                     <th scope="col">Tipo</th>
-                    <th scope="col">Descricao</th>
+                    <th scope="col">Descrição</th>
                     <th scope="col">Valor</th>
-                    <th colspan="2" scope="col">Comentario</th>
+                    <th colspan="2" scope="col">Comentário</th>
                 </tr>
             </thead>
             <tbody>
@@ -96,18 +101,28 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <input type="hidden" id="hiddenTxtIdLancamento" name="hiddenTxtIdLancamento">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="txtMesAno" class="form-label">Mes/Ano</label>
+                            <label for="txtMesAno" class="form-label">Mês/Ano</label>
                             <select class="form-select" id="txtMesAno">
                                 <option selected>Selecione</option>
-                                <option value="01-2023">01/2023</option>
-                                <option value="02-2023">02/2023</option>
-                                <option value="03-2023">03/2023</option>
+                                <option value="01-2023">Janeiro - 2023</option>
+                                <option value="02-2023">Fevereiro - 2023</option>
+                                <option value="03-2023">Março - 2023</option>
+                                <option value="04-2023">Abril - 2023</option>
+                                <option value="05-2023">Maio - 2023</option>
+                                <option value="06-2023">Junho - 2023</option>
+                                <option value="07-2023">Julho - 2023</option>
+                                <option value="08-2023">Agosto - 2023</option>
+                                <option value="09-2023">Setembro - 2023</option>
+                                <option value="10-2023">Outubro - 2023</option>
+                                <option value="11-2023">Novembro - 2023</option>
+                                <option value="12-2023">Dezembro - 2023</option>
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label for="txtTipoLancamento" class="form-label">Tipo lancamento</label>
+                            <label for="txtTipoLancamento" class="form-label">Tipo lançamento</label>
                             <select class="form-select" id="txtTipoLancamento">
                                 <option selected>Selecione</option>
                                 <option value="1">Receita</option>
@@ -119,9 +134,9 @@
 
                     <div class="row" style="margin-top: 5px;">
                         <div class="col-12">
-                            <label for="txtDescricao" class="form-label">Descricao</label>
+                            <label for="txtDescricao" class="form-label">Descrição</label>
                             <input type="text" class="form-control" id="txtDescricao"
-                                placeholder="Ex: Despesas com educacao">
+                                placeholder="Ex: Despesas com educação">
                         </div>
                     </div>
 
@@ -136,7 +151,7 @@
                     <div class="row" style="margin-top: 5px;">
                         <div class="col-md-12">
                             <label for="txtComentario" class="form-label">Comentário</label>
-                            <textarea class="form-control" placeholder="Leave a comment here" rows="3"
+                            <textarea class="form-control" placeholder="" rows="3" maxlength="500"
                                 id="txtComentario" style="resize: none;"></textarea>
                         </div>
                     </div>
@@ -144,8 +159,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Excluir</button>
-                    <button type="button" class="btn btn-primary" onclick="salvarLancamento()">Salvar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnExcluir" style="display: none;" onclick="excluir()">Excluir</button>
+                    <button type="button" class="btn btn-primary" onclick="salvar()">Salvar</button>
                 </div>
             </div>
         </div>
@@ -155,10 +170,6 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
-    <script src="script.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
-<footer>
-
-</footer>
-
 </html>
