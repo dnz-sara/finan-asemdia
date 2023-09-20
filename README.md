@@ -21,9 +21,9 @@ Basta fazer o download do projeto e abrir o arquivo index.html no seu browser.
 2. O sistema irá apresentar um popup com os campos a serem preenchidos:
 ![](documentacao/Screenshot_popup_lancamentos.png)
 
-3. Preencher os campos e clicar em no botão "Salvar"
+3. Preencher os campos e clicar no botão "Salvar"
 
-4. Logo após o lançamento será apresentado na listagem da tela principal no respectivo mês selecionado:
+4. Após o lançamento dos dados, eles serão apresentados na listagem da tela principal no respectivo mês selecionado:
  ![](documentacao/Screenshot_listagem.png)
 
 ---
@@ -33,7 +33,7 @@ Basta fazer o download do projeto e abrir o arquivo index.html no seu browser.
 
 2. Clicar no botão "Excluir".
 
-3. Logo após o usuário será redirecionado a página principal que apresentará já a atualização dos resumos relativos ao mês.
+3. O usuário será redirecionado para a página principal que apresentará a atualização dos resumos relativos ao mês.
 
 ---
 ## Como editar um lançamento
@@ -42,8 +42,8 @@ Basta fazer o download do projeto e abrir o arquivo index.html no seu browser.
 
 2. Efetuar as devidas alterações nos campos apresentados e clicar no botão "Salvar".
 
-3. Logo após o usuário será redirecionado a página principal que apresentará já a atualização dos resumos relativos ao mês.
+3. Logo após o usuário será redirecionado para a página principal que apresentará a atualização dos resumos relativos ao mês.
 
 ---
-## Resumo do mês
-O Resumo do mês é a composição da soma de receitas, despesas e rendimento que pode resultar em um resultado positivo ou negativo. Toda vez que um lançamento é incluído, alterado ou removido, o sistema efetua o cálculo automaticamente.
+## Resumo Consolidado do mês
+O Resumo do mês é a composição da soma de receitas, despesas e rendimentos, que pode resultar em um saldo positivo ou negativo. Toda vez que um lançamento é incluído, alterado ou removido, o sistema efetua o cálculo automaticamente.
